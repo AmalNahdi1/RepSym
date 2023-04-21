@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Entity;
+use Symfony\Component\Validator\Constraints as Assert;
 
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
@@ -19,6 +20,7 @@ class Payement
      * @ORM\Column(name="paymentId", type="integer", nullable=false)
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="IDENTITY")
+     
      */
     private $paymentid;
 
@@ -26,6 +28,7 @@ class Payement
      * @var int
      *
      * @ORM\Column(name="clientId", type="integer", nullable=false)
+     * @Assert\NotBlank(message="client ID should not be blank.")
      */
     private $clientid;
 
@@ -33,6 +36,7 @@ class Payement
      * @var string
      *
      * @ORM\Column(name="modePayment", type="string", length=255, nullable=false)
+     * @Assert\NotBlank(message="mode de paiement should not be blank.")
      */
     private $modepayment;
 
@@ -40,6 +44,7 @@ class Payement
      * @var float
      *
      * @ORM\Column(name="prixCourse", type="float", precision=10, scale=0, nullable=false)
+     * @Assert\NotBlank(message="Price should not be blank.")
      */
     private $prixcourse;
 

@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Entity;
+use Symfony\Component\Validator\Constraints as Assert;
 
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
@@ -22,8 +23,8 @@ class Contrat
      * @ORM\Column(name="id_contrat", type="integer", nullable=false)
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="IDENTITY")
-     */
 
+     */
 
 private $idContrat ; 
     
@@ -32,6 +33,8 @@ private $idContrat ;
      * @var int
      *
      * @ORM\Column(name="id_conducteur", type="integer", nullable=false)
+          * @Assert\NotBlank(message="id conducteur should not be blank.")
+
      */
     private $idConducteur;
     
@@ -39,6 +42,7 @@ private $idContrat ;
      * @var int
      *
      * @ORM\Column(name="id_admin", type="integer", nullable=false)
+     * @Assert\NotBlank(message="id admin should not be blank.")
      */
     private $idAdmin;
    
@@ -46,6 +50,7 @@ private $idContrat ;
      * @var \DateTime
      *
      * @ORM\Column(name="date_debut", type="date", nullable=false)
+     *  @Assert\NotBlank(message="date  should not be blank.")
      */
     private $dateDebut;
    
@@ -53,13 +58,16 @@ private $idContrat ;
      * @var \DateTime
      *
      * @ORM\Column(name="date_fin", type="date", nullable=false)
+     * @Assert\NotBlank(message="date fin should not be blank.")
      */
+    
     private $dateFin;
     
     /**
     * @var int
      *
      * @ORM\Column(name="prix", type="integer", nullable=false)
+     *@Assert\NotBlank(message="prix should not be blank.")
      */
     private $prix;
     
@@ -67,13 +75,15 @@ private $idContrat ;
      * @var string
      *
      * @ORM\Column(name="statut", type="string", length=50, nullable=false)
+     * @Assert\NotBlank(message="statut  should not be blank.")
      */
     private $statut;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="qrCode", type="string", length=50, nullable=false)
+     * @ORM\Column(name="qrCode", type="string", length=1000, nullable=false)
+     * @Assert\NotBlank(message="qrcode should not be blank.")
      */
     private $qrCode;
 

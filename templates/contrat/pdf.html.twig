@@ -1,0 +1,39 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title style="color: red">Contrat {{ contrat.idContrat }}</title>
+	<style>
+		body {
+
+			font-family: Garamond, serif;
+			color: black;
+			line-height: 1.5;
+			margin: 0;
+			border: 5px solid black;
+			padding: 20px;
+			text-align: justify;
+		}
+		p {
+			margin-top: 20px;
+			margin-bottom: 20px;
+			font-size: 18px;
+		}
+		strong {
+			font-weight: bold;
+		}
+	</style>
+</head>
+<body>
+<img src="http://localhost:8000/logn1.png" alt="AutoXpress Logo " >
+	<h1 style="color: red;">Contrat {{ contrat.idContrat }}</h1>
+	<p><strong>ID Conducteur:</strong> {{ contrat.idConducteur }}</p>
+	<p><strong>ID Admin:</strong> {{ contrat.idAdmin }}</p>
+	<p><strong>Date Début:</strong> {{ contrat.dateDebut|date('d/m/Y') }}</p>
+	<p><strong>Date Fin:</strong> {{ contrat.dateFin|date('d/m/Y') }}</p>
+	<p><strong>Prix:</strong> {{ contrat.prix }}</p>
+	<p><strong>Statut:</strong> {{ contrat.statut }}</p>
+	<p><strong>QR Code:</strong> {{ contrat.qrCode }}</p>
+	<p>Thank you for choosing our services.</p>
+</body>
+</html>

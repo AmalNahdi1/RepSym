@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Entity;
+use Symfony\Component\Validator\Constraints as Assert;
 
 use Doctrine\ORM\Mapping as ORM;
 
@@ -19,12 +20,13 @@ class Abonnement
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="IDENTITY")
      */
-    private $idab;
+     private $idab;
 
     /**
      * @var string
      *
      * @ORM\Column(name="typeAb", type="string", length=255, nullable=false)
+     * @Assert\NotBlank(message="TypeAB should not be blank.")
      */
     private $typeab;
 
@@ -32,6 +34,7 @@ class Abonnement
      * @var float
      *
      * @ORM\Column(name="prixAb", type="float", precision=10, scale=0, nullable=false)
+     *  @Assert\NotBlank(message="TypeAB should not be blank.")
      */
     private $prixab;
 
@@ -39,6 +42,7 @@ class Abonnement
      * @var string
      *
      * @ORM\Column(name="modePaiementAb", type="string", length=255, nullable=false)
+     *  @Assert\NotBlank(message="TypeAB should not be blank.")
      */
     private $modepaiementab;
 

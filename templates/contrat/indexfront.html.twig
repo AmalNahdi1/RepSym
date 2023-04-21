@@ -10,6 +10,14 @@
 
                                     <a href="{{ path('contrat_create') }}"> <button class="btn btn-primary" type="button">Ajouter</button></a>
 
+                              {% for a in ab %}
+<a href="{{ path('generate_pdf',{'id': a.idContrat}) }}" class="btn btn-primary">Generate PDF</a>
+   <a href="{{ path('download_pdf',{'id': a.idContrat}) }}" class="btn btn-primary">Download PDF</a>
+                              {% endfor %}
+
+
+
+
             <div class="row g-0">
                 <div class="col-lg-6 wow fadeIn" data-wow-delay="0.1s">
                     <div class="h-100">
@@ -102,7 +110,10 @@
                             </td>
                             <td>{{ a.prix }}</td>
                               
-                            <td style='display:flex'>                    
+                            <td style='display:flex'>
+  <a href="{{ path('generate_pdf',{'id': a.idContrat}) }}" class="btn btn-primary">Generate PDF</a>
+   <a href="{{ path('download_pdf',{'id': a.idContrat}) }}" class="btn btn-primary">Download PDF</a>
+
                             <a href="{{ path('contrat_edit',{'id': a.idContrat}) }}"><button class="btn btn-primary" type="button">Modifier</button></a>
                             <a href="{{ path('contrat_delete',{'id': a.idContrat}) }}">
                             <button class="btn btn-danger" type="button">Supprimer</button>

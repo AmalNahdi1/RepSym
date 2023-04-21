@@ -173,9 +173,10 @@ form .btn.btn-primary:hover {
         </div> </div> </div>
                 <div class="card box2 shadow-sm flex mx-auto h-100"> 
                  
-                              {{ form_start(form) }}
-                    {{ form_widget(form) }}
-                {{ form_end(form) }}
+{{ form_start(form,{'attr':{'novalidate':'novalidate'}})}}
+{{form_widget(form) }}
+   <button class="btn">{{ button_label|default('Save') }}</button>
+   {{form_end(form)}}                   
                                 
                 </div> 
                                   </div> </div>
